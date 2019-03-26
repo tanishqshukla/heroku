@@ -1,0 +1,177 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.5.42 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>  show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| adl                |
+| mysql              |
+| performance_schema |
+| shopping           |
+| simran             |
+| test               |
++--------------------+
+7 rows in set (0.20 sec)
+
+mysql> create database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create database project;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> use project;
+Database changed
+mysql> create table busroute;
+ERROR 1113 (42000): A table must have at least 1 column
+mysql> create table busroute(busno int(5), busroute varchar(10));
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> insert into busroute values(1, 'tulsinagar');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into busroute values(2, 'bombay hospital');
+ERROR 1406 (22001): Data too long for column 'busroute' at row 1
+mysql> insert into busroute values(2, 'bombayhospital');
+ERROR 1406 (22001): Data too long for column 'busroute' at row 1
+mysql> alter table busroute alter column busroute varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchar(20)' at line 1
+mysql> alter table busroute modify busroute varchar(20);
+Query OK, 1 row affected (0.36 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into busroute values(2, 'bombay hospital');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(4, 'bapat,sayaji');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(5, 'rau pump');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(7, 'saimandir gopur');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into busroute values(8, 'gandhi nagar');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(9, 'bhanwar kua');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into busroute values(10, 'girls hostel');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(16, 'rajmaholla,bandganga');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(20, 'vandana nagar');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(21, 'rajendra nagar');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(23, 'phutikoti');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into busroute values(24, 'MR10');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into busroute values(25, 'chamunda nagar');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(26, 'tower');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(22, 'teen puliya ITI');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(29, 'maalganj');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(30, 'sapna sangeeta');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(31, 'rani satigate');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(32, 'tejaji nagar');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(33, 'heera nagar');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(34, 'chandan nagar');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(35, 'khajrana anandbazar');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(36, 'dewas');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(37, 'vijay nagar,Radisson');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(38, 'dev guradia');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(41, 'shalimar');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into busroute values(42, 'rajbada');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into busroute values(44, 'patnipura,lig');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into busroute values(39, 'geeta bhawan,GPO');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from busroute;
++-------+----------------------+
+| busno | busroute             |
++-------+----------------------+
+|     1 | tulsinagar           |
+|     2 | bombay hospital      |
+|     4 | bapat,sayaji         |
+|     5 | rau pump             |
+|     7 | saimandir gopur      |
+|     8 | gandhi nagar         |
+|     9 | bhanwar kua          |
+|    10 | girls hostel         |
+|    16 | rajmaholla,bandganga |
+|    20 | vandana nagar        |
+|    21 | rajendra nagar       |
+|    23 | phutikoti            |
+|    24 | MR10                 |
+|    25 | chamunda nagar       |
+|    26 | tower                |
+|    22 | teen puliya ITI      |
+|    29 | maalganj             |
+|    30 | sapna sangeeta       |
+|    31 | rani satigate        |
+|    32 | tejaji nagar         |
+|    33 | heera nagar          |
+|    34 | chandan nagar        |
+|    35 | khajrana anandbazar  |
+|    36 | dewas                |
+|    37 | vijay nagar,Radisson |
+|    38 | dev guradia          |
+|    41 | shalimar             |
+|    42 | rajbada              |
+|    44 | patnipura,lig        |
+|    39 | geeta bhawan,GPO     |
++-------+----------------------+
+30 rows in set (0.00 sec)
+
+mysql>
